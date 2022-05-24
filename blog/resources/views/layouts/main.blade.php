@@ -23,7 +23,7 @@
                 <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}"  href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ ($title === "blogs") ? 'active' : '' }}" href="/blogs">blogs</a>
+                <a class="nav-link {{ ($title === "blogs") ? 'active' : '' }}" href="/posts">blogs</a>
               </li>
               
             </ul>
@@ -31,7 +31,10 @@
         </div>
       </nav>
 
-      @yield('judul')
+      <div class="container mt-4">
+        @yield('judul')
+      </div>
+     
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
