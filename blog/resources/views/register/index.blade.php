@@ -3,37 +3,61 @@
 @section('judul')
 
 <div class="row justify-content-center">
-    <div class="col-md-5">
-        <main class="form-signin">
-            <h1 class="h3 mb-3 fw-normal text-center">register</h1>
-            <form>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="name" placeholder="name">
-                <label for="name">name</label>
-            </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="username" placeholder="username">
-                <label for="username">username</label>
-            </div>
-          
-            
-                
-              <div class="form-floating">
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+  <div class="col-lg-5">
+      <main class="form-registration">
+          <h1 class="h3 mb-3 fw-normal text-center">Registration Form</h1>
+          <form action="/register" method="POST">
+              @csrf
+
+              <div class="form-floating my-3">
+                  <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name"
+                      placeholder="Name" value="{{ old('name') }}" required>
+                  @error('name')
+                      <div class="invalid-feedback">
+                          {{ $message }}
+                      </div>
+                  @enderror
+                  <label for="name">Name</label>
               </div>
-              <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+              <div class="form-floating my-3">
+                  <input type="text" name="username" class="form-control @error('username') is-invalid @enderror"
+                      id="username" placeholder="Username" value="{{ old('username') }}" required>
+                  @error('username')
+                      <div class="invalid-feedback">
+                          {{ $message }}
+                      </div>
+                  @enderror
+                  <label for="username">Username</label>
               </div>
-          
-              
-              <button class="w-100 btn btn-lg btn-primary" type="submit">register</button>
-              <small class="d-block text-center mt-3">have account?<a href="/login">login Now</a></small>
-            </form>
-          </main>
-        
-    </div>
+              <div class="form-floating my-3">
+                  <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                      id="email" placeholder="name@example.com" value="{{ old('email') }}" required>
+                  @error('email')
+                      <div class="invalid-feedback">
+                          {{ $message }}
+                      </div>
+                  @enderror
+                  <label for="email">Email address</label>
+              </div>
+              <div class="form-floating my-3">
+                  <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+                      id="password" placeholder="Password" required>
+                  @error('password')
+                      <div class="invalid-feedback">
+                          {{ $message }}
+                      </div>
+                  @enderror
+                  <label for="password">Password</label>
+              </div>
+
+              <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
+          </form>
+
+          <small class="d-block text-center mt-3">
+              Already registered ? <a href="/login">Login here</a>
+          </small>
+      </main>
+  </div>
 </div>
 
 @endsection
