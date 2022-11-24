@@ -27,11 +27,12 @@
                 <a class="nav-link {{ Request::is('/') ? 'active' : '' }}"  href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ Request::is('posts') ? 'active' : '' }}" href="/posts">blogs</a>
+                <a class="nav-link {{ Request::is('posts') ? 'active' : '' }}" href="/posts">Product</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ ($title === "Categories") ? 'active' : '' }}" href="/categories"></a>
+                <a class="nav-link {{ Request::is('alamat') ? 'active' : '' }}" href="/alamat">Contact</a>
               </li>
+              
 
 
             </ul>

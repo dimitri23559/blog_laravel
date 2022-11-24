@@ -26,7 +26,11 @@ Route::get('/', function () {
     ]);
 });
 
-
+Route::get('alamat',function () {
+    return view('alamat',[
+        "title" => "alamat"
+    ]);
+});
 
 
 Route::get('/posts',[PostController::class,'index']);
