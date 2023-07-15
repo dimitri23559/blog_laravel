@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col"><dl class="row">
-        <dt class="col-sm-3">Description lists</dt>
+        <dt class="col-sm-3">Zona Dieeng</dt>
         <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
       
         <dt class="col-sm-3">Euismod</dt>
